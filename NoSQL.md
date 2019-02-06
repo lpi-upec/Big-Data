@@ -34,6 +34,72 @@ Un document signifie un enregistrement, par exemple un paquet json. Ce type de b
 
 Type de base utilisateur, servant à une reprise sur un incident (entre une phase de Map et une phase de Reduce)
 
+## Installer HBase
+
+* Download Apache Hbase
+
+* Complete the installation process
+
+* Uncompress it : `tar -zxvf hbase-1.2.5-bin.tar.gz -C /opt/`
+
+* Edit `hbase-env.sh` :
+```
+export JAVA_HOME=YOUR_JDK_PATH
+```
+
+* Edit `hbase-site.xml` using this command lines :
+```XML
+<configuration>
+    //Here you have to set the path where you want HBase to store its files.
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://localhost:9000/hbase</value>
+    </property>
+    //Here you have to set the path where you want HBase to store its built in zookeeper  files.
+    <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/home/hadoopworkshop/zookeeper</value>
+    </property>
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+</configuration>
+```
+
+* Edit `bashrc` :
+```
+# - HBASE ENVIRONMENT VARIABLES START -#
+export HBASE_HOME=/usr/local/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+# - HBASE ENVIRONMENT VARIABLES END -#
+```
+
+Update env var with .bashrc : `source .bashrc`
+
+* Start hbase processes
+    * Start hadoop process first:
+    ```
+    start-hdfs.sh
+    start-yarn.sh
+    ```
+    * Start hbase:
+    ```
+    start-hbase.sh
+    ```
+
+* Stop hbase processes
+
+    * Stop hbase:
+    ```
+    stop-hbase.sh
+    ```
+    * Stop hadoop process:
+    ```
+        stop-dfs.sh
+        stop-yarn.sh
+    ```
+
 ## HBase
 
 Les données sont stockées dans des tables. Les tables sont découpées en famille de colonne. Les familles de colonnes sont découpées en colonnes typées.  
