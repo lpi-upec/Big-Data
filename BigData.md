@@ -96,7 +96,7 @@ NB : il est préférable de modifier le fichier .bashrc de l'utilisateur.
 * Configuration Hadoop
 
 Modifier core-site.xml
-```
+```XML
 <configuration>
     <property>
         <name>fs.defaultFS</name>
@@ -106,7 +106,7 @@ Modifier core-site.xml
 ```
 
 Modifier hdfs-site.xml
-```
+```XML
 <configuration>
     <property>
         <name>dfs.replication</name>
@@ -173,7 +173,7 @@ NB : en http les verbes get et delete n’ont pas de body dans la requête
 Pour effectuer des appel via des API rest il faut télécharger postman ou google Chrome directement.
 
 * Pour utiliser l’API REST d’HDFS, il faut mofifier le fichier `hdfs-site.xml` :
-```
+```XML
 <configuration>
     <property>
         <name>dfs.webhdfs.enabled</name>
