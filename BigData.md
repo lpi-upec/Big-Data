@@ -188,23 +188,23 @@ start-dfs.sh
 ```
 
 * Avec postman créer un répertoire seance2
-```
+```HTTP
 Put http://localhost:50070//webhdfs/v1/user/hduser/seance2?op=MKDIRS&user.name=hduser
 ```
 * lire les infos sur un répertoire
-```
+```HTTP
 Get http://localhost:50070//webhdfs/v1/user/hduser/seance2?op=GETFILESTATUS
 ```
 Add : Accept/application/json to the header.
 
 * Lire un fichier info:csv présent dans le répertoire seance2
-```
+```HTTP
 Get http://localhost:50070//webhdfs/v1/user/hduser/seance2/info:csv?user.name=hduser&op=OPEN
 ```
 Add : Accept/application/xml to the header
 
 * Supprimer le fichier info:csv
-```
+```HTTP
 Delete http://localhost:50070//webhdfs/v1/user/hduser/seance2?user.name=hduser&op=DELETE
 ```
 Add : Accept/application/xml to the header
