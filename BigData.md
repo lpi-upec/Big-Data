@@ -38,33 +38,33 @@ HDFS possède 3 modes d'accès :
 
 * Installer un jdk
 
-```
+```sh
 sudo tar xvzf jdk.tar.gz /opt/
 ```
 
 * Créer un utilisteur et un groupe
 
-```
+```sh
 sudo addgroup hadoop
 sudo adduser --ingroup hadoop hduser
 ```
 
 * Connecter 2 OS
 
-```  
+```sh
 Sudo apt-get install openssh-server
 ```
 
 * Créer une paire de clés avec RSA
 
-```
+```sh
 ssh-keygen -t rsa -P ””
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
 Vérifier la configuration :
 
-```
+```sh
 ssh location
 ```
 
@@ -72,14 +72,14 @@ ssh location
 
 http://mirror.ibcp.fr/pub/apache/hadoop/common/hadoop-2.7.6/
 
-```
+```sh
 Sudo Tar xzf hadoop-2.7.4.tgz -C /opt/.
 Sudo chown hduser:hadoop -R /opt/hadoop-2.7.4
 ```
 
 * Créer 2 répertoires pour NameNode et la DataNode
 
-```
+```sh
 sudo mkdir -p /var/hadoop/hdfs/namenode
 sudo mkdir -p /var/hadoop/hdfs/datanode
 sudo chown hduser:hadoop -R /var/hadoop
@@ -125,7 +125,7 @@ Modifier hdfs-site.xml
 
 * Formatage de la partition distribuée
 
-```
+```sh
 export JAVA_HOME=/opt/jdk1.8.0
 export HADOOP_HOME=/opt/hadoop
 export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
