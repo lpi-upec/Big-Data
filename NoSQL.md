@@ -43,7 +43,7 @@ Type de base utilisateur, servant à une reprise sur un incident (entre une phas
 * Uncompress it : `tar -zxvf hbase-1.2.5-bin.tar.gz -C /opt/`
 
 * Edit `hbase-env.sh` :
-```
+```sh
 export JAVA_HOME=YOUR_JDK_PATH
 ```
 
@@ -68,7 +68,7 @@ export JAVA_HOME=YOUR_JDK_PATH
 ```
 
 * Edit `bashrc` :
-```
+```sh
 # - HBASE ENVIRONMENT VARIABLES START -#
 export HBASE_HOME=/usr/local/hbase
 export PATH=$PATH:$HBASE_HOME/bin
@@ -79,23 +79,23 @@ Update env var with .bashrc : `source .bashrc`
 
 * Start hbase processes
     * Start hadoop process first:
-    ```
+    ```sh
     start-hdfs.sh
     start-yarn.sh
     ```
     * Start hbase:
-    ```
+    ```sh
     start-hbase.sh
     ```
 
 * Stop hbase processes
 
     * Stop hbase:
-    ```
+    ```sh
     stop-hbase.sh
     ```
     * Stop hadoop process:
-    ```
+    ```sh
         stop-dfs.sh
         stop-yarn.sh
     ```
