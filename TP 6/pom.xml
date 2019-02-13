@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.edenskull</groupId>
-    <artifactId>ex5-bigdata</artifactId>
+    <artifactId>ex6-bigdata</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-core -->
@@ -29,18 +29,11 @@
             <version>2.9.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
+        <!-- https://mvnrepository.com/artifact/org.apache.pig/pig -->
         <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-client</artifactId>
-            <version>2.1.2</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-mapreduce -->
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-mapreduce</artifactId>
-            <version>2.1.2</version>
+            <groupId>org.apache.pig</groupId>
+            <artifactId>pig</artifactId>
+            <version>0.17.0</version>
         </dependency>
     </dependencies>
 
@@ -51,7 +44,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ex5.LicencesInsertDriver</mainClass>
+                            <mainClass>ex6.LicencesLillePerFederation</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -66,4 +59,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
