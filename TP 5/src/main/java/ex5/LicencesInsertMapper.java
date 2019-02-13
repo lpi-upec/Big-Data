@@ -18,9 +18,7 @@ public class LicencesInsertMapper extends Mapper<LongWritable, Text, ImmutableBy
 
     protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, ImmutableBytesWritable, Put>.Context context) throws IOException, InterruptedException {
         if(key.get() == 0 ) {
-            return;public class LicencesInsertMapper {
-            }
-
+            return;
         }
         String ligne = value.toString();
         ligne = ligne.substring(1, ligne.length()-1);
