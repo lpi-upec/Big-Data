@@ -2,7 +2,9 @@ package ex6;
 
 import org.apache.log4j.Logger;
 import org.apache.pig.ExecType;
+import org.apache.pig.PigRunner;
 import org.apache.pig.PigServer;
+import org.apache.pig.tools.pigstats.PigStats;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -19,9 +21,10 @@ public class LicencesLillePerFederation {
 		properties.setProperty("mapred.job.tracker", "http://localhost:10020");
 
 		try {
-			PigServer pigServer = new PigServer(ExecType.MAPREDUCE, properties);
+			PigServer pigServer = new PigServer(ExecType.MAPREDUCE);
 			InputStream pigStream = LicencesLillePerFederation.class.getClassLoader().getResourceAsStream("licences_lille_per_federation.pig");
 			pigServer.registerScript(pigStream);
+			PigStats pigStats = PigRunner.run(args, null);
 		} catch (Exception e) {
 			ex6Log.error(e.getMessage());
 		}
