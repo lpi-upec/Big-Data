@@ -48,25 +48,29 @@ Entre `load` et `store`, il faut réaliser un traitement :
 
 * Extraire Pig
 
-```
+```sh
 sudo tar xzf pig.tar.gz -C /opt
 sudo chown -R hduser:hadoop /opt/pig
 ```
 
 * Modifier le .bashrc
 
-```
+```sh
 export PIG_HOME=/opt/pig
 export PATH=$PIG_HOME/bin:$PATH
 ```
 
 * Recharger .bashrc
 
-`source ~/.bashrc`
+```sh
+source ~/.bashrc
+```
 
 * Démarrer l'outil jobhistory de HADOOP
 
-`mr-jobhistory-daemon.sh start historyserver`
+```sh
+mr-jobhistory-daemon.sh start historyserver
+```
 
 * Démarrer pig en local ou avec hadoop
 
