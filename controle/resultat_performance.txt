@@ -1,0 +1,1 @@
+Selon les logs le programme JAVA lié à HBase est plus performant au niveau de la rapidité d'éxécution.
